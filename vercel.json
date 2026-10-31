@@ -6,7 +6,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://applypilot-api.onrender.com/api/:path*"
+      "destination": "https://applypilot-api-5jv7.onrender.com/api/:path*"
     },
     {
       "source": "/(.*)",

@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     region: singapore
-    buildCommand: npm ci && npm run build --workspace @applypilot/api
+    buildCommand: npm ci --include=dev && npm run build --workspace @applypilot/api
     startCommand: npm run db:deploy --workspace @applypilot/api && npm run start --workspace @applypilot/api
     healthCheckPath: /health
     envVars:

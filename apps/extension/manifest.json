@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ApplyPilot Job Capture",
+  "version": "0.1.0",
+  "description": "Capture the job page you choose into your ApplyPilot workspace.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:5173/*"
+  ],
+  "action": {
+    "default_title": "Capture this job in ApplyPilot",
+    "default_popup": "popup.html"
+  }
+}

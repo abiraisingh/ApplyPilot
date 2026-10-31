@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ApplyPilot capture</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header><span class="mark">◎</span><div><strong>ApplyPilot</strong><small>Capture this job page</small></div></header>
+      <p id="page-hint" class="hint">Choose a job or application page on a supported portal, then capture it here.</p>
+      <label>Company<input id="company" autocomplete="off" placeholder="Company name"></label>
+      <label>Role<input id="role" autocomplete="off" placeholder="Job title"></label>
+      <label>Status
+        <select id="status">
+          <option value="APPLIED">Applied</option>
+          <option value="SAVED">Saved</option>
+          <option value="ASSESSMENT">Assessment</option>
+          <option value="INTERVIEW">Interview</option>
+          <option value="OFFER">Offer</option>
+          <option value="REJECTED">Rejected</option>
+          <option value="WITHDRAWN">Withdrawn</option>
+        </select>
+      </label>
+      <button id="capture" type="button">Capture in ApplyPilot</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

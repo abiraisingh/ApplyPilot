@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { width: 340px; margin: 0; color: #2a2e39; background: #fff; font: 13px "Segoe UI", sans-serif; }
+main { display: grid; gap: 12px; padding: 18px; }
+header { display: flex; align-items: center; gap: 10px; padding-bottom: 13px; border-bottom: 1px solid #ececf2; }
+header div { display: grid; gap: 2px; }
+header strong { font-size: 15px; }
+header small, .hint { color: #858b96; font-size: 11px; }
+.mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #fff; background: #7657dc; font-size: 20px; }
+.hint { margin: 0; line-height: 1.5; }
+label { display: grid; gap: 5px; color: #4a505b; font-size: 11px; font-weight: 600; }
+input, select { width: 100%; height: 36px; padding: 0 9px; border: 1px solid #e3e5eb; border-radius: 6px; color: #303541; background: #fff; font: inherit; }
+input:focus, select:focus { border-color: #9c87ee; outline: 2px solid #9c87ee44; }
+button { min-height: 38px; border: 0; border-radius: 7px; color: white; background: #7657dc; font-size: 12px; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+#message { min-height: 16px; margin: 0; color: #66717f; font-size: 11px; line-height: 1.45; }
+#message.error { color: #b13d49; }
+#message.success { color: #26734d; }

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.env
+*.db
+*.db-journal
+apps/api/prisma/dev.db
+apps/api/prisma/test.db
+apps/api/generated/

@@ -86,6 +86,18 @@ npm test
 npm run build
 ```
 
+## Deployment (Vercel + Render)
+
+The root `vercel.json` builds the frontend and proxies `/api/*` to the Render API. This same-origin proxy is required for the app's HTTP-only session cookies. The root `render.yaml` defines a free Render web service and PostgreSQL database in Singapore.
+
+1. In Render, create a Blueprint from this GitHub repository and apply `render.yaml`.
+2. Set the Render API service's `WEB_ORIGIN` to the exact production Vercel origin (for example, `https://your-project.vercel.app`).
+3. Import the repository into Vercel from its root. `vercel.json` supplies the build and output settings. If Render assigns an API hostname other than `https://applypilot-api.onrender.com`, update the `/api/*` rewrite destination in `vercel.json` to the assigned hostname and push the change.
+4. Deploy the Vercel project. No `VITE_API_URL` setting is needed; production uses the same-origin `/api/v1` proxy.
+5. To enable Gmail in production, set the OAuth client credentials, a persistent 32-byte `OAUTH_TOKEN_ENCRYPTION_KEY`, and `GOOGLE_OAUTH_REDIRECT_URL` in Render's environment settings. Add the exact callback URL to the Google OAuth client. Configure optional AI credentials there as well; never put production secrets in Vercel's frontend variables.
+
+**Free-tier warning:** Render free web services can sleep after inactivity, and free PostgreSQL databases expire after 30 days. After the additional 14-day grace period, Render deletes the database and its data. Free databases also have no backups. Use this setup only for a temporary demo; upgrade the database before storing data you need to keep. The deployed database starts empty; local SQLite records are not copied.
+
 ## API
 
 All routes are under `/api/v1`. Responses are `{ "data": ... }` or `{ "error": { "code": ..., "message": ... } }`.
